@@ -58,7 +58,6 @@ export const Avatar = styled.Image`
   width: 64px;
   height: 64px;
   border-radius: 32px;
-  background: #eee;
 `;
 
 export const Name = styled.Text`
@@ -109,12 +108,11 @@ export const Avatarperfil = styled.Image`
   width: 100px;
   height: 100px;
   border-radius: 50px;
-  background: #eee;
 `;
 
 export const Nameperfil = styled.Text`
-  font-size: 16px;
-  color: #333;
+  font-size: 24px;
+  color: #fff;
   font-weight: bold;
   margin-top: 10px;
   text-align: center;

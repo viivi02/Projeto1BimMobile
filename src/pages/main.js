@@ -91,15 +91,15 @@ export default class Main extends Component {
         return;
       }
 
-      const types = response.data.types.map(t => t.type.name).join(", ");
+      const types = response.data.types.map(t => t.type.name);
 
       const data = {
         id: response.data.id,
         name: response.data.name,
-        bio: `Tipo(s): ${rawTypes.join(", ")}`,
+        bio: `Tipo(s): ${types.join(", ")}`,
         avatar: response.data.sprites.front_default,
-        types: rawTypes,
-      };
+        types,
+      };      
 
       this.setState({
         users: [...users, data],

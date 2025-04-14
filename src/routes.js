@@ -2,7 +2,7 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import Main from "./pages/main";
 import Login from "./pages/login";
-import User from "./pages/users";
+import User from "./pages/pokemons";
 import CadastrarUsuario from "./pages/cadastro";
 import { Ionicons } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -83,7 +83,7 @@ export default function Routes() {
           title: "Dados do Pokémon",
           headerTitleAlign: "center",
           headerStyle: {
-            backgroundColor: "#273c75",
+            backgroundColor: "#CC0000",
           },
           headerTitleStyle: {
             color: "#fff",

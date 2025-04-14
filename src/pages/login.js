@@ -81,10 +81,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   title: {
-    fontSize: 32,
+    fontSize: 82,
     fontWeight: "bold",
     marginBottom: 30,
-    color: "#2f3640",
+    color: "#000",
     textTransform: "uppercase",
   },
   input: {
