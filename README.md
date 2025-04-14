@@ -2,6 +2,17 @@
 
 Este projeto é um aplicativo desenvolvido com **React Native** e **Expo**, utilizando funcionalidades como navegação, armazenamento local e integração com uma API de Pokémon. O app tem uma tela de login, uma tela de cadastro de usuário, e exibe uma lista de Pokémon com detalhes adicionais.
 
+## Requisitos
+
+#### Ter react-native e expo baixados
+
+```bash
+npm install react-native
+```
+```bash
+npm install expo
+```
+
 ## Funcionalidades
 
 - **Tela de Login**: Permite ao usuário fazer login com um e-mail e senha armazenados no AsyncStorage.
@@ -53,3 +64,56 @@ Clone este repositório em sua máquina local:
 
 ```bash
 git clone https://github.com/viivi02/Projeto1BimMobile.git
+```
+
+### 2. **Dependencias para se instalar no terminal**
+
+```bash
+npm install
+```
+
+```bash
+npm install @react-navigation/native
+```
+
+```bash
+npm install @react-navigation/stack
+```
+
+```bash
+npm install react-native-gesture-handler
+```
+
+```bash
+npm install react-native-reanimated
+```
+
+```bash
+npm install react-native-screens
+```
+
+```bash
+npx expo install axios
+```
+
+```bash
+npm install expo-linear-gradient
+```
+
+```bash
+npm install @react-native-async-storage/async-storage
+```
+
+```bash
+npm install @expo/vector-icons
+```
+
+```bash
+npx npx expo install react-native-safe-area-context
+```
+
+### 3. **Após finalizar as instalações, rode o comando abaixo:**
+
+```bash
+npx expo start
+```
