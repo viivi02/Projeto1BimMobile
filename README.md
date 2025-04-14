@@ -1,8 +1,8 @@
 # Documentação do Projeto - Pokémon App
 
 ## Projeto desenvolvido por:
-- Vinicius Lemes
-- Patrícia Nogueira
+- Vinicius Lemes Ribeiro
+- Patrícia Nogueira Dias
 
 Este projeto é um aplicativo desenvolvido com **React Native** e **Expo**, utilizando funcionalidades como navegação, armazenamento local e integração com uma API de Pokémon. O app tem uma tela de login, uma tela de cadastro de usuário, e exibe uma lista de Pokémon com detalhes adicionais. Foi utilizado de base o projeto feito em sala de aula.
 
