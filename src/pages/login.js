@@ -7,7 +7,8 @@ import {
   View,
   TextInput,
   TouchableOpacity,
-  Alert,
+  KeyboardAvoidingView,
+  Platform,
 } from "react-native";
 
 const Login = () => {
@@ -17,46 +18,57 @@ const Login = () => {
   const navigation = useNavigation();
 
   const handleLogin = async () => {
-    const user = await AsyncStorage.getItem("user")
-    if(!user){
-      alert("Nenhum usuário cadastrado!")
-      return
+    const user = await AsyncStorage.getItem("user");
+    if (!user) {
+      alert("Nenhum usuário cadastrado!");
+      return;
     }
-    const userJson = JSON.parse(user)
-    if(userJson.email === email && userJson.password === password){
-      navigation.navigate("Main")
-    }else{
-      alert("E-mail ou senha inválidos!")
+    const userJson = JSON.parse(user);
+    if (userJson.email === email && userJson.password === password) {
+      navigation.navigate("Main");
+    } else {
+      alert("E-mail ou senha inválidos!");
     }
   };
 
   const handleCadastro = () => {
-    navigation.navigate("CadastrarUsuario")
-  }
+    navigation.navigate("CadastrarUsuario");
+  };
 
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView
+      style={styles.container}
+      behavior={Platform.OS === "ios" ? "padding" : undefined}
+    >
+      <Text style={styles.title}>Bem-vindo!</Text>
+      <Text style={styles.subtitle}>Faça login para continuar</Text>
+
       <TextInput
         style={styles.input}
         placeholder="E-mail"
+        placeholderTextColor="#aaa"
         value={email}
         onChangeText={setEmail}
+        autoCapitalize="none"
+        keyboardType="email-address"
       />
       <TextInput
         style={styles.input}
         placeholder="Senha"
-        secureTextEntry={true}
+        placeholderTextColor="#aaa"
+        secureTextEntry
         value={password}
         onChangeText={setPassword}
       />
+
       <TouchableOpacity style={styles.button} onPress={handleLogin}>
         <Text style={styles.buttonText}>Entrar</Text>
       </TouchableOpacity>
-      
-      <TouchableOpacity style={styles.button} onPress={handleCadastro}>
-        <Text style={styles.buttonText}>Cadastrar</Text>
+
+      <TouchableOpacity style={styles.link} onPress={handleCadastro}>
+        <Text style={styles.linkText}>Não tem conta? Cadastre-se</Text>
       </TouchableOpacity>
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 
@@ -65,27 +77,39 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#fff",
+    backgroundColor: "#f5f6fa", // cor de fundo suave
+    paddingHorizontal: 20,
+  },
+  title: {
+    fontSize: 32,
+    fontWeight: "bold",
+    marginBottom: 30,
+    color: "#2f3640",
+    textTransform: "uppercase",
   },
   input: {
     borderWidth: 1,
-    borderColor: "#ccc",
+    borderColor: "#dcdde1",
     borderRadius: 10,
-    padding: 10,
+    padding: 12,
     marginVertical: 10,
-    width: "80%",
+    width: "100%",
+    backgroundColor: "#fff",
+    fontSize: 16,
   },
   button: {
-    backgroundColor: "#7159c1",
+    backgroundColor: "#FFCC00",
     borderRadius: 10,
-    padding: 10,
-    width: "80%",
+    padding: 12,
+    width: "100%",
     alignItems: "center",
-    marginVertical: 5,
+    marginVertical: 8,
+    elevation: 2,
   },
   buttonText: {
     color: "#fff",
     fontWeight: "bold",
+    fontSize: 16,
   },
 });
 

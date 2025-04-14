@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import api from "../services/api";
+import typeColors from "../utils/typeColors";
+import { View, Text } from "react-native";
 import {
+  GradientContainer,
   Container,
   Header,
   Avatarperfil,
@@ -8,7 +11,6 @@ import {
   BioPerfil,
   Stars,
   Starred,
-  OwnerAvatar,
   Info,
   Title,
   Author,
@@ -16,46 +18,80 @@ import {
 
 export default class User extends Component {
   state = {
-    stars: [],
+    stats: [],
+    types: [],
   };
 
   async componentDidMount() {
     const { route } = this.props;
     const { user } = route.params;
 
-    const response = await api.get(`/users/${user.login}/starred`);
-    this.setState({ stars: response.data });
+    const response = await api.get(`/pokemon/${user.name}`);
+    this.setState({
+      stats: response.data.stats,
+      types: response.data.types.map((t) => t.type.name),
+    });    
   }
 
   render() {
     const { route } = this.props;
     const { user } = route.params;
-    const { stars } = this.state;
+    const { stats, types } = this.state;
 
     return (
-      <Container>
+      <GradientContainer>
         <Header>
           <Avatarperfil source={{ uri: user.avatar }} />
           <Nameperfil>{user.name}</Nameperfil>
-          <BioPerfil>{user.bio}</BioPerfil>
         </Header>
+        <View
+          style={{
+            flexDirection: "row",
+            flexWrap: "wrap",
+            marginTop: 8,
+            justifyContent: "center",
+          }}
+        >
+          {types.map((type) => (
+            <View
+              key={type}
+              style={{
+                backgroundColor: typeColors[type] || "#ccc",
+                paddingHorizontal: 8,
+                paddingVertical: 4,
+                borderRadius: 12,
+                marginRight: 6,
+                marginBottom: 4,
+              }}
+            >
+              <Text
+                style={{
+                  color: "#fff",
+                  fontWeight: "bold",
+                  fontSize: 12,
+                  textTransform: "capitalize",
+                }}
+              >
+                {type}
+              </Text>
+            </View>
+          ))}
+        </View>
 
         <Stars
-            showVerticalScrollIndicator={false}
-            data={stars}
-            keyExtractor={(star) => String(star.id)}
-            renderItem={({item}) => (
-                <Starred>
-                    <OwnerAvatar source={{uri: item.owner.avatar_url}} />
-                    <Info>
-                        <Title>{item.name}</Title>
-                        <Author>{item.owner.login}</Author>
-                    </Info>
-                </Starred>
-            )}
-        >
-        </Stars>
-      </Container>
+          showVerticalScrollIndicator={false}
+          data={stats}
+          keyExtractor={(stat, index) => String(index)}
+          renderItem={({ item }) => (
+            <Starred>
+              <Info>
+                <Title>{item.stat.name}</Title>
+                <Author>Base stat: {item.base_stat}</Author>
+              </Info>
+            </Starred>
+          )}
+        />
+      </GradientContainer>
     );
   }
 }

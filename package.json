@@ -16,6 +16,8 @@
     "@react-navigation/stack": "^7.2.10",
     "axios": "^1.8.4",
     "expo": "~52.0.32",
+    "expo-font": "~13.0.4",
+    "expo-linear-gradient": "~14.0.2",
     "expo-status-bar": "~2.0.1",
     "projeto4dsm": "file:",
     "react": "18.3.1",
@@ -27,6 +29,7 @@
     "react-native-screens": "~4.4.0",
     "react-native-vector-icons": "^10.2.0",
     "react-native-web": "~0.19.13",
+    "react-native-web-linear-gradient": "^1.1.2",
     "styled-components": "^6.1.17"
   },
   "devDependencies": {

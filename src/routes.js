@@ -20,7 +20,7 @@ export default function Routes() {
           headerLeft: null,
           headerTitleAlign: "center",
           headerStyle: {
-            backgroundColor: "#7159c1",
+            backgroundColor: "#CC0000",
           },
           headerTitleStyle: {
             color: "#fff",
@@ -35,7 +35,7 @@ export default function Routes() {
           title: "CADASTRO DE USUÁRIOS",
           headerTitleAlign: "center",
           headerStyle: {
-            backgroundColor: "#7159c1",
+            backgroundColor: "#CC0000",
           },
           headerTitleStyle: {
             color: "#fff",
@@ -48,10 +48,10 @@ export default function Routes() {
         component={Main}
         options={({ navigation }) => ({
           headerLeft: null,
-          title: "GitHub VIEWER",
+          title: "Visualização de Pokémon",
           headerTitleAlign: "center",
           headerStyle: {
-            backgroundColor: "#3498db",
+            backgroundColor: "#CC0000",
           },
           headerTintColor: "#fff",
           headerTitleStyle: {
@@ -80,10 +80,10 @@ export default function Routes() {
         name="User"
         component={User}
         options={{
-          title: "PERFIL DO USUÁRIO",
+          title: "Dados do Pokémon",
           headerTitleAlign: "center",
           headerStyle: {
-            backgroundColor: "#7159c1",
+            backgroundColor: "#273c75",
           },
           headerTitleStyle: {
             color: "#fff",

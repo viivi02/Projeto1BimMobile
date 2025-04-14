@@ -12,17 +12,25 @@ export default class CadastrarUsuario extends Component {
   state = {
     email: "",
     password: "",
+    nome: "",
+    cpf: "",
+    telefone: "",
+    curso: "",
   };
 
   handleCadastro = async () => {
-    const { email, password } = this.state;
-    if (!email || !password) {
+    const { email, password, nome, cpf, telefone, curso } = this.state;
+    if (!email || !password || !nome || !cpf || !telefone || !curso) {
       alert("Preencha todos os campos!");
       return;
     }
     const user = {
       email,
       password,
+      nome,
+      cpf,
+      telefone,
+      curso
     };
     await AsyncStorage.setItem("user", JSON.stringify(user));
     alert("Usuário cadastrado com sucesso!");
@@ -37,6 +45,30 @@ export default class CadastrarUsuario extends Component {
           placeholder="E-mail"
           value={this.state.email}
           onChangeText={(email) => this.setState({ email })}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Nome"
+          value={this.state.nome}
+          onChangeText={(nome) => this.setState({ nome })}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="CPF"
+          value={this.state.cpf}
+          onChangeText={(cpf) => this.setState({ cpf })}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Telefone"
+          value={this.state.telefone}
+          onChangeText={(telefone) => this.setState({ telefone })}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Curso"
+          value={this.state.curso}
+          onChangeText={(curso) => this.setState({ curso })}
         />
         <TextInput
           style={styles.input}
@@ -69,7 +101,7 @@ const styles = StyleSheet.create({
     width: "80%",
   },
   button: {
-    backgroundColor: "#7159c1",
+    backgroundColor: "#FFCC00",
     borderRadius: 10,
     padding: 10,
     width: "80%",

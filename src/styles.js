@@ -1,5 +1,15 @@
 import styled from "styled-components/native";
 import { RectButton } from "react-native-gesture-handler";
+import { LinearGradient } from 'expo-linear-gradient';
+
+export const GradientContainer = styled(LinearGradient).attrs({
+  colors: ['#FFCC00', '#CC0000'],
+  start: { x: 0, y: 0 },
+  end: { x: 1, y: 1 },
+})`
+  flex: 1;
+  padding: 30px;
+`;
 
 //Estilos para a página Main
 export const Container = styled.View`
@@ -27,7 +37,7 @@ export const Input = styled.TextInput.attrs({
 export const SubmitButton = styled(RectButton)`
   justify-content: center;
   align-items: center;
-  background: #7159c1;
+  background: #FFCC00;
   border-radius: 4px;
   margin-left: 10px;
   padding: 0 12px;
@@ -52,9 +62,11 @@ export const Avatar = styled.Image`
 `;
 
 export const Name = styled.Text`
-  font-size: 14px;
+  font-family: "PixelFont";
+  font-size: 16px;
   color: #333;
-  font-weight: bold;
+  margin-top: 4px;
+  text-transform: capitalize;
   margin-top: 4px;
   text-align: center;
 `;
@@ -73,7 +85,7 @@ export const ProfileButton = styled(RectButton)`
   margin-top: 10px;
   align-self: stretch;
   border-radius: 4px;
-  background: #7159c1;
+  background: #FFCC00;
   justify-content: center;
   align-items: center;
   height: 36px;
