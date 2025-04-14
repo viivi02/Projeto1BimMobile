@@ -28,10 +28,21 @@ Este é o arquivo principal do aplicativo que configura a navegação e carrega 
 ### 2. **`routes.js`**
 
 Contém a configuração da navegação do aplicativo utilizando a biblioteca `@react-navigation/stack`. As telas configuradas são:
-- **Login**: Tela inicial para o login do usuário.
-- **CadastrarUsuario**: Tela para cadastrar novos usuários.
-- **Main**: Tela para visualizar os detalhes de Pokémon.
-- **User**: Tela para exibir dados detalhados de um Pokémon específico.
+#### **Login**: Tela inicial para o login do usuário.
+
+![Tela de login](https://github.com/viivi02/Projeto1BimMobile/blob/e7b418724e2d3e8ac490d81a434ab8d79ef45807/imgs/LoginScreen.png)
+
+#### **CadastrarUsuario**: Tela para cadastrar novos usuários.
+
+![Tela de cadastro de usuário](https://github.com/viivi02/Projeto1BimMobile/blob/e7b418724e2d3e8ac490d81a434ab8d79ef45807/imgs/CadastroScreen.png)
+
+#### **Main**: Tela para visualizar os detalhes de Pokémon.
+
+![Tela principal](https://github.com/viivi02/Projeto1BimMobile/blob/e7b418724e2d3e8ac490d81a434ab8d79ef45807/imgs/MainScreen.png)
+
+#### **User**: Tela para exibir dados detalhados de um Pokémon específico.
+
+![Tela de detalhes do pokemon](https://github.com/viivi02/Projeto1BimMobile/blob/e7b418724e2d3e8ac490d81a434ab8d79ef45807/imgs/DetalhesScreen.png)
 
 ### 3. **`login.js`**
 
